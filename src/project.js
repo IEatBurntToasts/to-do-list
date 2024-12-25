@@ -15,4 +15,16 @@ const project = (title) => {
     function getTaskProperty(index,taskProperty) {
         return _projectItems[index][taskProperty];
     }
+    return {
+        set title(title) {
+            this.title = title;
+        },
+        get title() {
+            return this.title;
+        },
+        createTask,
+        deleteTask,
+        editTask,
+        getTaskProperty
+    }
 }
