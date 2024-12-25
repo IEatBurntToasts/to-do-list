@@ -1,4 +1,4 @@
-const listItem = (title,description='',dueDate='',priority='',note='') {
+const taskItem = (title,description='',dueDate='',priority='',note='') => {
     return {
         get title() {
             return title;
@@ -33,4 +33,4 @@ const listItem = (title,description='',dueDate='',priority='',note='') {
     }
 }
 
-export { listItem };
+export { taskItem };
