@@ -16,11 +16,11 @@ const project = (title) => {
         return _projectItems[index][taskProperty];
     }
     return {
-        set title(title) {
-            this.title = title;
+        set title(newTitle) {
+            title = newTitle;
         },
         get title() {
-            return this.title;
+            return title;
         },
         createTask,
         deleteTask,
