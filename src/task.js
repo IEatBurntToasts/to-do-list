@@ -1,4 +1,4 @@
-const task = (title,description='',dueDate='',priority='',note='') => {
+const task = (title,description='',dueDate='',priority=0,note='') => {
     return {
         get title() {
             return title;

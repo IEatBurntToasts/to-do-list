@@ -3,7 +3,7 @@ const { task } = require("./task");
 const project = (title) => {
     const _tasks = [];
 
-    function createTask(title,description,dueDate,priority='',note='') {
+    function createTask(title,description,dueDate,priority=0,note='') {
         _tasks.push(task(title,description,dueDate,priority,note));
     }
     function deleteTask(index) {
