@@ -13,3 +13,10 @@ h1 {
     text-align: center;
     font-size: clamp(25px,3vw,3rem);
 }
+
+nav {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    background-color: purple;
+}
