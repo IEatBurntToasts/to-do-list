@@ -37,3 +37,25 @@ nav {
     width: 450px;
     background-color: purple;
 }
+
+/* Tasks Section */
+
+.tasks-main {
+    flex: auto;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    position: relative;
+}
+
+.tasks-main-header {
+    position: relative;
+    background-color: red;
+}
+
+.tasks-main-header h2 {
+    padding: 20px;
+    font-size: clamp(25px,3vw,2.5rem);
+    text-align: center;
+    right: -10px;
+}
