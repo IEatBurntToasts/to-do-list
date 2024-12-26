@@ -1,19 +1,22 @@
 const { task } = require("./task");
 
 const project = (title) => {
-    const _projectItems = [];
+    const _tasks = [];
 
-    function createTask(title,description='',dueDate='',priority='',note='') {
-        _projectItems.push(task(title,description='',dueDate='',priority='',note=''));
+    function createTask(title,description,dueDate,priority='',note='') {
+        _tasks.push(task(title,description,dueDate,priority,note));
     }
     function deleteTask(index) {
-        _projectItems.splice(index,1);
+        _tasks.splice(index,1);
     }
     function editTask(index,taskProperty,newValue) {
-        _projectItems[index][taskProperty] = newValue;
+        _tasks[index][taskProperty] = newValue;
     }
-    function getTaskProperty(index,taskProperty) {
-        return _projectItems[index][taskProperty];
+    function getTask(index) {
+        return _tasks[index];
+    }
+    function length() {
+        return _tasks.length;
     }
     return {
         set title(newTitle) {
@@ -25,6 +28,9 @@ const project = (title) => {
         createTask,
         deleteTask,
         editTask,
-        getTaskProperty
+        getTask,
+        length
     }
 }
+
+export { project }
