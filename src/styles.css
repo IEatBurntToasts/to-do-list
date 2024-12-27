@@ -36,6 +36,7 @@ nav {
     flex-direction: column;
     width: 450px;
     background-color: purple;
+    min-width: 300px;
 }
 
 /* Tasks Section */
@@ -63,13 +64,13 @@ nav {
 
 .tasks {
     display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(550px,1fr));
+    gap: 50px;
 }
 
 .task {
     display: flex;
     column-gap: 20px;
-    max-width: 50%;
-    max-width: 800px;
 }
 
 .task-main {
