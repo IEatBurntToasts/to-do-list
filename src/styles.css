@@ -68,11 +68,26 @@ nav {
     gap: 50px;
 }
 
+/* Task Section */
+
 .task {
     display: flex;
     column-gap: 20px;
+    align-items: center;
 }
 
 .task-main {
     flex: auto;
+}
+
+.checkbox.uncheck {
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.checkbox.uncheck:hover {
+    background-color: rgb(219, 219, 219);
+    cursor: pointer;
 }
