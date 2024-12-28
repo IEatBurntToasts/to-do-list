@@ -87,6 +87,8 @@ nav.sidebar li {
 /* Task Section */
 
 .task {
+    --border-radius: 5px;
+
     display: flex;
     column-gap: 20px;
     align-items: center;
@@ -108,22 +110,26 @@ nav.sidebar li {
     cursor: pointer;
 }
 
-span.material-icons {
+span.date {
+    font-size: 1.15rem;
+}
+
+span.material-icons-round {
     position: relative;
     font-size: 2rem;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     padding: 2px;
 }
 
-span.material-icons:hover {
+span.material-icons-round:hover {
     background-color: rgb(243, 243, 243);
 }
 
 .options {
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     background-color: rgb(241, 241, 241);
     position: absolute;
     top: 0;
@@ -142,7 +148,7 @@ span.material-icons:hover {
     border: transparent;
     background-color: transparent;
     padding: 8px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
 .options button:hover {
