@@ -29,14 +29,29 @@ h1 {
     height: 100%;
 }
 
-/* Nav Bar Section */
+/* Nav Main Section */
 
-nav {
+.nav-main {
     display: flex;
     flex-direction: column;
     width: 450px;
-    background-color: purple;
     min-width: 300px;
+    background-color: rgb(255, 227, 255);
+    padding: 0px 25px;
+}
+
+nav.sidebar ul {
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: 20px;
+}
+
+nav.sidebar li {
+    font-size: 1.5rem;
+    list-style: none;
+    border: 3px solid black;
+    padding: 5px;
+    border-radius: 6px;
 }
 
 /* Tasks Section */
@@ -65,7 +80,8 @@ nav {
 .tasks {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(550px,1fr));
-    gap: 50px;
+    gap: 70px;
+    padding: 30px;
 }
 
 /* Task Section */
