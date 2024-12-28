@@ -111,6 +111,13 @@ nav.sidebar li {
 span.material-icons {
     position: relative;
     font-size: 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 2px;
+}
+
+span.material-icons:hover {
+    background-color: rgb(243, 243, 243);
 }
 
 .options {
@@ -123,6 +130,8 @@ span.material-icons {
     right: 0;
     transform: translateY(-103px) translateX(-13px);
     padding: 8px;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .options button {
