@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="./index.js" type="module"></script>
 </head>
 <body>
@@ -40,37 +41,13 @@
                     </div>
                     <input class="date" type="date">
                     <input class="star" type="checkbox">
-                    <span class="edit-dropdown">edit</span>
-                </div>
-                <div class="task">
-                    <div class="checkbox uncheck"></div>
-                    <div class="task-main">
-                        <h3 class="task-title">Task title</h3>
-                        <p class="task-description">Task description</p>
-                    </div>
-                    <input class="date" type="date">
-                    <input class="star" type="checkbox">
-                    <span class="edit-dropdown">edit</span>
-                </div>
-                <div class="task">
-                    <div class="checkbox uncheck"></div>
-                    <div class="task-main">
-                        <h3 class="task-title">Task title</h3>
-                        <p class="task-description">Task description</p>
-                    </div>
-                    <input class="date" type="date">
-                    <input class="star" type="checkbox">
-                    <span class="edit-dropdown">edit</span>
-                </div>
-                <div class="task">
-                    <div class="checkbox uncheck"></div>
-                    <div class="task-main">
-                        <h3 class="task-title">Task title</h3>
-                        <p class="task-description">Task description</p>
-                    </div>
-                    <input class="date" type="date">
-                    <input class="star" type="checkbox">
-                    <span class="edit-dropdown">edit</span>
+                    <span class="material-icons" data-dropdown-button>
+                        more_vert
+                        <div class="options">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </span>
                 </div>
             </div>
         </div>

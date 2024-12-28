@@ -107,3 +107,35 @@ nav.sidebar li {
     background-color: rgb(219, 219, 219);
     cursor: pointer;
 }
+
+span.material-icons {
+    position: relative;
+    font-size: 2rem;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: rgb(241, 241, 241);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-103px) translateX(-13px);
+    padding: 8px;
+}
+
+.options button {
+    text-align: start;
+    flex: auto;
+    padding: 0;
+    font-size: 1.5rem;
+    border: transparent;
+    background-color: transparent;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.options button:hover {
+    background-color: rgb(255, 255, 255);
+}
