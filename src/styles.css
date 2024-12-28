@@ -13,7 +13,7 @@ body {
 /* Header Section */
 
 header {
-    background-color: rgb(146, 211, 241);
+    background-color: #92d3f1;
 }
 
 h1 {
@@ -36,7 +36,7 @@ h1 {
     flex-direction: column;
     width: 450px;
     min-width: 300px;
-    background-color: rgb(255, 227, 255);
+    background-color: #ffe3ff;
     padding: 0px 25px;
 }
 
@@ -49,7 +49,7 @@ nav.sidebar ul {
 nav.sidebar li {
     font-size: 1.5rem;
     list-style: none;
-    border: 3px solid black;
+    border: 3px solid #000000;
     padding: 5px;
     border-radius: 6px;
 }
@@ -67,7 +67,7 @@ nav.sidebar li {
 
 .tasks-main-header {
     position: relative;
-    background-color: red;
+    background-color: #ff0000;
 }
 
 .tasks-main-header h2 {
@@ -94,20 +94,31 @@ nav.sidebar li {
     align-items: center;
 }
 
-.task-main {
-    flex: auto;
-}
-
 .checkbox.uncheck {
     width: 20px;
     height: 20px;
-    border: 2px solid black;
+    border: 2px solid #000000;
     border-radius: 50%;
 }
 
 .checkbox.uncheck:hover {
-    background-color: rgb(219, 219, 219);
+    background-color: #dbdbdb;
     cursor: pointer;
+}
+
+.task-main {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    row-gap: 5px;
+}
+
+.task-title {
+    font-size: 1.3rem;
+}
+
+.task-description {
+    font-size: 1.15rem;
 }
 
 span.date {
@@ -123,14 +134,14 @@ span.material-icons-round {
 }
 
 span.material-icons-round:hover {
-    background-color: rgb(243, 243, 243);
+    background-color: #f3f3f3;
 }
 
 .options {
     display: flex;
     flex-direction: column;
     border-radius: var(--border-radius);
-    background-color: rgb(241, 241, 241);
+    background-color: #f1f1f1;
     position: absolute;
     top: 0;
     right: 0;
@@ -152,5 +163,5 @@ span.material-icons-round:hover {
 }
 
 .options button:hover {
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
 }
