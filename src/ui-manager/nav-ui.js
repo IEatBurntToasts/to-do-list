@@ -1,14 +1,20 @@
-const navUIManager = (() => {
-    function setActiveElement(element) {
-        element.classList.add('active');
+import utilsUI from './utils-ui.js';
+
+export default (function navUIManager() {
+    function createProjectElement(title) {
+        const project = document.createElement('div');
+
+        project.textContent = title;
+        project.classList.add('project');
+
+        return project;
     }
-    function removeActiveElement(element) {
-        element.classList.remove('active');
-    }
-    function toggleActiveElement(oldElement,newElement) {
-        removeActiveElement(oldElement);
-        setActiveElement(newElement);
+    function addProjectElement(element,parentElement) {
+        parentElement.append(element);
     }
 
-    return { toggleActiveElement }
+    return {
+        createProjectElement, 
+        addProjectElement 
+    }
 })();

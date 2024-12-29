@@ -16,16 +16,24 @@
             <div class="home-sections">
                 <h1 class="home">Home</h1>
                 <nav class="sidebar">
-                    <ul class="content">
-                        <li>All Tasks</li>
-                        <li>Today</li>
-                        <li>This Week</li>
-                        <li>Starred</li>
-                    </ul>
+                    <div class="all-tasks">All Tasks</div>
+                    <div class="today">Today</div>
+                    <div class="this-week">This Week</div>
+                    <div class="starred">Starred</div>
                 </nav>
             </div>
             <div class="project-sections">
                 <h1 class="projects">Projects</h1>
+                <nav class="sidebar">
+                    <div class="project">Project1</div>
+                    <form class="project form">
+                        <div class="form button-group">
+                            <input type="text" minlength="1" maxlength="20" placeholder="Project Title">
+                            <button class="add" type="submit">Add</button>
+                            <button class="cancel">Cancel</button>
+                        </div>
+                    </form>
+                </nav>
             </div>
         </div>
         <div class="tasks-main">
