@@ -8,7 +8,6 @@ export default (function formManager() {
         const projectFormContainer = document.querySelector('.bar.project.form');
         const projectAdd = document.querySelector('.bar.project-add');
         const projectForm = document.querySelector('form.project.form');
-        const addButton = projectForm.querySelector('button.add');
         const cancelButton = projectForm.querySelector('button.cancel');
 
         projectAdd.addEventListener('click', () => {
@@ -31,8 +30,6 @@ export default (function formManager() {
     
             const input = projectForm.querySelector('input').value;
             const project = navUIManager.createProject(input);
-    
-            project.textContent = input;
             
             navUIManager.addProjectAbove(project,projectFormContainer,projectNavBar);
             projectManager.addProject(input);
@@ -43,6 +40,9 @@ export default (function formManager() {
             e.preventDefault();
         });
     })();
+    const renameFormManager = (() => {
+        ;
+    });
     const taskFormManager = (() => {
         ;
     });

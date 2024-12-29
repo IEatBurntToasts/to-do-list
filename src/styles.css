@@ -51,8 +51,20 @@ nav.sidebar .bar {
     font-size: 1.5rem;
     list-style: none;
     border: 3px solid #000000;
-    padding: 5px;
+    padding: 5px 10px;
     border-radius: 6px;
+}
+
+/* Nav Project Section */
+
+nav.sidebar .bar.project:not(.bar.project.form) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav.sidebar .bar.project h3 {
+    font-size: 1.5rem;
 }
 
 /* Nav Form Section */
