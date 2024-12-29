@@ -11,6 +11,10 @@ body {
     margin: 0;
 }
 
+:root {
+    --border-radius-vert: 5px;
+}
+
 /* Header Section */
 
 header {
@@ -65,6 +69,11 @@ nav.sidebar .bar.project:not(.bar.project.form) {
 
 nav.sidebar .bar.project h3 {
     font-size: 1.5rem;
+    font-weight: normal;
+}
+
+nav.sidebar .bar.project span.project {
+    border-radius: var(--border-radius-vert);
 }
 
 /* Nav Form Section */
@@ -159,8 +168,6 @@ form.project button {
 /* Task Section */
 
 .task {
-    --border-radius: 5px;
-
     display: flex;
     column-gap: 20px;
     align-items: center;
@@ -201,7 +208,7 @@ span.material-icons-round {
     position: relative;
     font-size: 2rem;
     cursor: pointer;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-vert);
     padding: 2px;
 }
 
@@ -212,7 +219,7 @@ span.material-icons-round:hover {
 .options {
     display: flex;
     flex-direction: column;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-vert);
     background-color: #f1f1f1;
     position: absolute;
     top: 0;
@@ -235,7 +242,7 @@ span.material-icons-round:hover {
     border: transparent;
     background-color: transparent;
     padding: 8px;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-vert);
 }
 
 .options button:hover {
