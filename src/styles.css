@@ -59,7 +59,23 @@ nav.sidebar .bar {
 form.project.form {
     display: flex;
     flex-flow: column nowrap;
+    gap: 10px;
+}
 
+form .button-group {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+}
+
+form button {
+    width: 80px;
+    padding: 5px 0;
+    font-size: 1.1rem;
+    border: 2px solid #000000;
+    border-radius: 5px;
 }
 
 /* Tasks Section */
