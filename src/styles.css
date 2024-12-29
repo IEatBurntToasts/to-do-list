@@ -56,11 +56,34 @@ nav.sidebar .bar {
 
 /* Nav Form Section */
 
+.bar.project.form {
+    padding: 0;
+    border: none;
+}
+
+.bar.project-add {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.bar.project-add.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
+}
+
 form.project.form {
     display: flex;
     flex-flow: column nowrap;
     gap: 10px;
     padding: 10px;
+}
+
+form.project.form.active {
+    position: relative;
+    opacity: 1;
+    pointer-events: all;
 }
 
 form .button-group {

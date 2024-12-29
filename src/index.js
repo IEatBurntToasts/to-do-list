@@ -1,7 +1,6 @@
 import projectManager from "./project-manager";
-import navUIManager from "./ui-manager/nav-ui";
-import tasksUIManager from "./ui-manager/tasks-ui";
-import windowUIManager from "./ui-manager/window-ui";
+import projectForm from "./form-manager";
+import UIManager from './ui-managers/ui-manager'
 import './styles.css';
 
 // title, description, duedate, priotirity, notes 
@@ -14,8 +13,7 @@ const dropdown = task.querySelector('[data-dropdown-button]');
 const editElement = task.querySelector('.edit');
 const deleteElement = task.querySelector('.delete');
 
-tasksUIManager.addStarListener(star);
-tasksUIManager.addDotDropdownListener(dropdown);
-tasksUIManager.addEditOptionListener(editElement);
-tasksUIManager.addDeleteOptionListener(deleteElement);
-
+UIManager.addStarListener(star);
+UIManager.addDotDropdownListener(dropdown);
+UIManager.addEditOptionListener(editElement);
+UIManager.addDeleteOptionListener(deleteElement);
