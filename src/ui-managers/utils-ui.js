@@ -5,15 +5,17 @@ export default (function utilsUI() {
     function removeActiveElement(element) {
         element.classList.remove('active');
     }
-    function toggleActiveElement(oldElement,newElement) {
-        removeActiveElement(oldElement);
-        setActiveElement(newElement);
-    }
-    function toggleActiveElement(element) {
-        if (element.classList.contains('active')) {
+    function toggleActiveElement(element, newElement=null) {
+        if (newElement) {
             removeActiveElement(element);
-        } else {
-            setActiveElement(element);
+            setActiveElement(newElement);
+        }
+        else {
+            if (element.classList.contains('active')) {
+                removeActiveElement(element);
+            } else {
+                setActiveElement(element);
+            }
         }
     }
 
