@@ -20,7 +20,7 @@ export default (function formManager() {
             utilsUI.toggleActiveElement(projectForm, projectAdd);
         });
     
-        addButton.addEventListener('click', (e) => {
+        projectForm.addEventListener('submit', (e) => {
             e.preventDefault();
             
             // Despite pointer events set to none, pressing "enter" on form still sends 
