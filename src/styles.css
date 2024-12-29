@@ -60,6 +60,7 @@ form.project.form {
     display: flex;
     flex-flow: column nowrap;
     gap: 10px;
+    padding: 10px;
 }
 
 form .button-group {
@@ -68,6 +69,12 @@ form .button-group {
     justify-content: center;
     width: 100%;
     gap: 20px;
+}
+
+form input {
+    padding: 10px 8px;
+    font-size: 1.05rem;
+    border-radius: 5px;
 }
 
 form button {
