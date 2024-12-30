@@ -12,10 +12,10 @@ export default (function tasksUIManager() {
             }
         });
     }
-    function addDotDropdownListener(dotDropdownElement) {
+    function addDotDropdownListener(dotDropdownElement,optionsElement) {
         dotDropdownElement.addEventListener('click', (e) => {
             e.stopPropagation();
-            utilsUI.toggleActiveElement(e.target.querySelector('div.options'));
+            utilsUI.toggleActiveElement(optionsElement);
         });
     }
     function addEditOptionListener(editElement) {

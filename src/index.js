@@ -14,6 +14,6 @@ const editElement = task.querySelector('.edit');
 const deleteElement = task.querySelector('.delete');
 
 UIManager.addStarListener(star);
-UIManager.addDotDropdownListener(dropdown);
+UIManager.addDotDropdownListener(dropdown,dropdown.querySelector('div.options'));
 UIManager.addEditOptionListener(editElement);
 UIManager.addDeleteOptionListener(deleteElement);
