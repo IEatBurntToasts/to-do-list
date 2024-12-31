@@ -8,6 +8,8 @@ export default (function projectManager() {
         const projectID = (_projectIDStack.length) ? _projectIDStack.pop() : _projects.size + 1;
 
         _projects.set(projectID,project(title,projectID));
+
+        return projectID;
     }
     function deleteProject(projectID) {
         _projects.delete(projectID);

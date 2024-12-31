@@ -3,7 +3,7 @@ import utilsUI from "./ui-managers/utils-ui.js";
 import projectManager from "./project-manager.js";
 
 export default (function formManager() {
-    const projectFormManager = (() => {
+    (function projectFormManager() {
         const projectNavBar = document.querySelector('.project-sections .sidebar');
         const projectFormContainer = document.querySelector('.bar.project.form');
         const projectAdd = document.querySelector('.bar.project-add');
@@ -29,20 +29,17 @@ export default (function formManager() {
             }
     
             const input = projectForm.querySelector('input').value;
-            const project = navUIManager.createProject(input);
+            const projectID = projectManager.addProject(input); // Add project logic side and returns projectID for project
+            const project = navUIManager.createProject(input,projectID);
             
             navUIManager.addProjectAbove(project,projectFormContainer,projectNavBar);
-            projectManager.addProject(input);
-            projectForm.reset();
             utilsUI.toggleActiveElement(projectForm, projectAdd);
+            projectForm.reset();
         });
         cancelButton.addEventListener('click', (e) => {
             e.preventDefault();
         });
     })();
-    const renameFormManager = (() => {
-        ;
-    });
     const taskFormManager = (() => {
         ;
     });

@@ -5,8 +5,6 @@ import './styles.css';
 
 // title, description, duedate, priotirity, notes 
 
-projectManager.addProject('project1');
-
 const task = document.querySelector('.task');
 const star = task.querySelector('span.star');
 const dropdown = task.querySelector('[data-dropdown-button]');

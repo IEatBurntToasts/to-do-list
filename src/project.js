@@ -8,6 +8,8 @@ const project = (title,projectID) => {
         const taskID = (_idStack.length) ? _idStack.pop() : _tasks.size + 1;
 
         _tasks.set(taskID,task(title,taskID,description,dueDate));
+
+        return taskID;
     }
     function deleteTask(taskID) {
         _tasks.delete(taskID);
