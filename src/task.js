@@ -1,10 +1,13 @@
-const task = (title,description='',dueDate='',priority=0,note='') => {
+const task = (title,uniqueID,description='',dueDate='') => {
     return {
         get title() {
             return title;
         },
         set title(newTitle) {
             title = newTitle;
+        },
+        get uniqueID() {
+            return uniqueID;
         },
         get description() {
             return description;
@@ -17,18 +20,6 @@ const task = (title,description='',dueDate='',priority=0,note='') => {
         },
         set dueDate(newDueDate) {
             dueDate = newDueDate;
-        },
-        get priority() {
-            return priority;
-        },
-        set priority(newPriority) {
-            priority = newPriority;
-        },
-        get note() {
-            return note;
-        },
-        set note(newNote) {
-            note = newNote;
         }
     }
 }

@@ -1,6 +1,8 @@
 import utilsUI from "./utils-ui";
 
 export default (function navUIManager() {
+    const projectIDs = new Set();
+
     function createProject(title) {
         const project = document.createElement('div');
         const projectTitle = document.createElement('h3');

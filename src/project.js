@@ -1,22 +1,26 @@
 const { task } = require("./task");
 
-const project = (title) => {
-    const _tasks = [];
+const project = (title,projectDOMElement) => {
+    const _tasks = new Map();
+    const idStack = [];
 
-    function createTask(title,description,dueDate,priority=0,note='') {
-        _tasks.push(task(title,description,dueDate,priority,note));
+    function createTask(title,description='',dueDate='') {
+        const taskID = (idStack.length) ? idStack.pop() : idStack.length + 1;
+
+        _tasks.set(taskID,task(title,taskID,description,dueDate));
     }
-    function deleteTask(index) {
-        _tasks.splice(index,1);
+    function deleteTask(taskID) {
+        _tasks.delete(taskID);
+        idQueue.push(taskID);
     }
-    function editTask(index,taskProperty,newValue) {
-        _tasks[index][taskProperty] = newValue;
+    function editTask(taskID,taskProperty,newValue) {
+        _tasks.get(taskID)[taskProperty] = newValue;
     }
-    function getTask(index) {
-        return _tasks[index];
+    function getTask(taskID) {
+        return _tasks.get(taskID);
     }
     function length() {
-        return _tasks.length;
+        return _tasks.size;
     }
     return {
         set title(newTitle) {
