@@ -1,4 +1,4 @@
-const task = (title,uniqueID,description='',dueDate='') => {
+const task = (title,taskID,description='',dueDate='') => {
     return {
         get title() {
             return title;
@@ -6,8 +6,8 @@ const task = (title,uniqueID,description='',dueDate='') => {
         set title(newTitle) {
             title = newTitle;
         },
-        get uniqueID() {
-            return uniqueID;
+        get taskID() {
+            return taskID;
         },
         get description() {
             return description;
