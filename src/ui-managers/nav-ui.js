@@ -2,8 +2,6 @@ import projectManager from "../project-manager";
 import utilsUI from "./utils-ui";
 
 export default (function navUIManager() {
-    const projectIDs = new Set();
-
     function createProject(title,projectID) {
         const project = document.createElement('div');
         const projectTitle = document.createElement('h3');
@@ -24,6 +22,7 @@ export default (function navUIManager() {
         renameButton.textContent = 'Rename';
 
         addProjectDotDropdownListener(projectEdit,editOptions);
+        addRenameProjectListener(renameButton);
         addDeleteProjectListener(deleteButton);
 
         editOptions.append(renameButton,deleteButton);
@@ -33,6 +32,10 @@ export default (function navUIManager() {
         project.setAttribute('data-id',projectID);
 
         return project;
+    }
+    function renameProject(project) {
+        const projectID = parseInt(project.getAttribute('data-id'));
+        const projectRenameForm = projectRenameFormElement(project.textContent);
     }
     function deleteProject(project) {
         const projectID = parseInt(project.getAttribute('data-id'));
@@ -60,11 +63,43 @@ export default (function navUIManager() {
             deleteProject(project);
         });
     }
+    function addRenameProjectListener(renameButton) {
+        renameButton.addEventListener('click', () => {
+            const project = renameButton.parentElement.parentElement.parentElement;
+
+            renameProject(project);
+        });
+    }
+    function projectRenameFormElement(currentProjectTitle) {
+        const renameForm = document.createElement('div');
+        const input = document.createElement('input');
+        const buttonGroup = document.createElement('div');
+        const renameButton = document.createElement('button');
+        const cancelButton = document.createElement('button');
+
+        renameForm.className = 'bar project form-rename';
+        input.setAttribute('autofocus','autofocus');
+        input.setAttribute('type','text');
+        input.setAttribute('id','edit-project-title');
+        input.setAttribute('name','edit-project-title');
+        input.setAttribute('pattern','[a-zA-Z]+');
+        input.setAttribute('minlength','1');
+        input.textContent = currentProjectTitle;
+
+        buttonGroup.className = 'form button-group';
+        renameButton.className = 'rename';
+        cancelButton.className = 'cancel';
+
+        renameButton.textContent = 'Rename';
+        cancelButton.textContent = 'Cancel';
+
+        renameForm.append(input,buttonGroup);
+        buttonGroup.append(renameButton,cancelButton);
+
+        return renameForm;
+    };
 
     return {
-        createProject,
-        addProjectAbove,
-        addProject,
-        addProjectDotDropdownListener
+        createProject
     }
 })();

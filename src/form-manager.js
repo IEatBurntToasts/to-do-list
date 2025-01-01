@@ -40,9 +40,7 @@ export default (function formManager() {
             e.preventDefault();
         });
     })();
-    const taskFormManager = (() => {
-        ;
-    });
-
-    return { taskFormManager }
+    function deleteProject(projectID) {
+        
+    }
 })();
