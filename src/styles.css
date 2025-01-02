@@ -135,6 +135,12 @@ form.project button {
     border-radius: 5px;
 }
 
+.bar.project.edit-mode {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
+
 /* Tasks Section */
 
 .tasks-main {
