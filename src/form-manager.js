@@ -40,7 +40,15 @@ export default (function formManager() {
             e.preventDefault();
         });
     })();
+    function renameProject(projectID,newProjectTitle) {
+        projectManager.editProjectTitle(projectID,newProjectTitle);
+    }
     function deleteProject(projectID) {
-        
+        projectManager.deleteProject(projectID);
+    }
+
+    return {
+        renameProject,
+        deleteProject
     }
 })();

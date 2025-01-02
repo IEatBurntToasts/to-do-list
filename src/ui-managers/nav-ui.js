@@ -1,4 +1,4 @@
-import projectManager from "../project-manager";
+import formManager from "../form-manager";
 import utilsUI from "./utils-ui";
 
 export default (function navUIManager() {
@@ -33,16 +33,18 @@ export default (function navUIManager() {
 
         return project;
     }
-    function renameProject(project) {
+    function renameProject(project,newProjectTitle) {
         const projectID = parseInt(project.getAttribute('data-id'));
-        const projectRenameForm = projectRenameFormElement(project.textContent);
+        const titleField = project.querySelector('h3');
+        
+        titleField.textContent = newProjectTitle;
+        formManager.renameProject(projectID,newProjectTitle);
     }
     function deleteProject(project) {
         const projectID = parseInt(project.getAttribute('data-id'));
 
-        projectManager.deleteProject(projectID);
         project.remove();
-
+        formManager.deleteProject(projectID);
     }
     function addProjectAbove(element,referenceElement,parentElement) {
         parentElement.insertBefore(element,referenceElement);
@@ -66,40 +68,56 @@ export default (function navUIManager() {
     function addRenameProjectListener(renameButton) {
         renameButton.addEventListener('click', () => {
             const project = renameButton.parentElement.parentElement.parentElement;
+            const navBar = document.querySelector('.project-sections nav.sidebar');
+            const renameForm = projectRenameForm(project);
 
-            renameProject(project);
+            utilsUI.toggleActiveElement(renameForm);
+            addProjectAbove(renameForm,project,navBar);
         });
     }
-    function projectRenameFormElement(currentProjectTitle) {
-        const renameForm = document.createElement('div');
+    function projectRenameForm(project) {
+        const renameForm = document.createElement('form');
         const input = document.createElement('input');
         const buttonGroup = document.createElement('div');
         const renameButton = document.createElement('button');
         const cancelButton = document.createElement('button');
 
-        renameForm.className = 'bar project form-rename';
         input.setAttribute('autofocus','autofocus');
         input.setAttribute('type','text');
         input.setAttribute('id','edit-project-title');
         input.setAttribute('name','edit-project-title');
         input.setAttribute('pattern','[a-zA-Z]+');
         input.setAttribute('minlength','1');
-        input.textContent = currentProjectTitle;
-
+        renameButton.setAttribute('type','submit');
+        
+        renameForm.className = 'bar project form-rename';
         buttonGroup.className = 'form button-group';
         renameButton.className = 'rename';
         cancelButton.className = 'cancel';
 
+        input.textContent = project.textContent;
         renameButton.textContent = 'Rename';
         cancelButton.textContent = 'Cancel';
+
+        renameForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const title = input.value;
+
+            utilsUI.toggleActiveElement(renameForm);
+            renameProject(project,title);
+        });
 
         renameForm.append(input,buttonGroup);
         buttonGroup.append(renameButton,cancelButton);
 
         return renameForm;
-    };
+    }
 
     return {
-        createProject
+        createProject,
+        projectRenameForm,
+        addProject,
+        addProjectAbove
     }
 })();
