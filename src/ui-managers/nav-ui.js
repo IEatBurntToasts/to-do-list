@@ -86,13 +86,13 @@ export default (function navUIManager() {
         const buttonGroup = document.createElement('div');
         const renameButton = document.createElement('button');
         const cancelButton = document.createElement('button');
-        const titleField = project.querySelector('h3');
 
         input.setAttribute('type','text');
         input.setAttribute('id','edit-project-title');
         input.setAttribute('name','edit-project-title');
         input.setAttribute('minlength','1');
         input.setAttribute('maxlength','30');
+        input.setAttribute('autocomplete','off');
         renameButton.setAttribute('type','submit');
         
         renameForm.className = 'bar project form-rename';
