@@ -70,11 +70,14 @@ export default (function navUIManager() {
             const project = renameButton.parentElement.parentElement.parentElement;
             const navBar = document.querySelector('.project-sections nav.sidebar');
             const renameForm = projectRenameForm(project);
+            const input = renameForm.querySelector('input');
+            const title = project.querySelector('h3').textContent;
 
             utilsUI.toggleActiveElement(renameForm);
             toggleProjectEditMode(project);
             addProjectAbove(renameForm,project,navBar);
             renameForm.querySelector('input').focus();
+            input.value = title;
         });
     }
     function projectRenameForm(project) {
@@ -89,7 +92,7 @@ export default (function navUIManager() {
         input.setAttribute('id','edit-project-title');
         input.setAttribute('name','edit-project-title');
         input.setAttribute('minlength','1');
-        input.setAttribute('value',titleField.textContent);
+        input.setAttribute('maxlength','30');
         renameButton.setAttribute('type','submit');
         
         renameForm.className = 'bar project form-rename';
@@ -97,7 +100,6 @@ export default (function navUIManager() {
         renameButton.className = 'rename';
         cancelButton.className = 'cancel';
 
-        input.textContent = project.textContent;
         renameButton.textContent = 'Rename';
         cancelButton.textContent = 'Cancel';
 
