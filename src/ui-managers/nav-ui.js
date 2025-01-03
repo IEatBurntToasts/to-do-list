@@ -74,6 +74,7 @@ export default (function navUIManager() {
             utilsUI.toggleActiveElement(renameForm);
             toggleProjectEditMode(project);
             addProjectAbove(renameForm,project,navBar);
+            renameForm.querySelector('input').focus();
         });
     }
     function projectRenameForm(project) {
@@ -84,11 +85,9 @@ export default (function navUIManager() {
         const cancelButton = document.createElement('button');
         const titleField = project.querySelector('h3');
 
-        input.setAttribute('autofocus','autofocus');
         input.setAttribute('type','text');
         input.setAttribute('id','edit-project-title');
         input.setAttribute('name','edit-project-title');
-        input.setAttribute('pattern','[a-zA-Z]+');
         input.setAttribute('minlength','1');
         input.setAttribute('value',titleField.textContent);
         renameButton.setAttribute('type','submit');
