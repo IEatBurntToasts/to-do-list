@@ -106,11 +106,19 @@ export default (function navUIManager() {
         renameForm.addEventListener('submit', (e) => {
             e.preventDefault();
 
+            const submitter = e.submitter.className;
             const title = input.value;
+
+            console.log(submitter);
+            
+            // Check if 'rename' or 'cancel' button was pressed
+            if (submitter == 'rename') {
+                renameProject(project,title);
+            }
 
             utilsUI.toggleActiveElement(renameForm);
             toggleProjectEditMode(project);
-            renameProject(project,title);
+            renameForm.remove();
         });
 
         renameForm.append(input,buttonGroup);
