@@ -105,6 +105,15 @@ form.project {
     pointer-events: none;
 }
 
+form.project.form-rename {
+    border: transparent;
+    padding: 0;
+}
+
+form.project.form-rename input {
+    width: 100%;
+}
+
 form.project.active {
     position: relative;
     opacity: 1;
